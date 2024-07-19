@@ -1,1 +1,1 @@
-# iOS_Projektwoche2_Gruppe1
+# iOS_Projektwoche2
