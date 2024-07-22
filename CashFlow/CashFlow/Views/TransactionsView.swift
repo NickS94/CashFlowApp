@@ -21,6 +21,7 @@ struct TransactionsView: View {
                     Spacer()
                     Text("\(numbersList.reduce(0){$0 + $1}) €")
                 }
+                .padding()
                 
                 List{
                     ForEach(numbersList, id:\.self){ number in
