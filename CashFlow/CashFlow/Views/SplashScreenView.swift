@@ -41,7 +41,7 @@ struct SplashScreenView: View {
                         withAnimation(.easeIn(duration: 1.5)) {
                             self.size = 0.9
                             self.opacity = 1.0
-                            self.rotationAngle = 320
+                            self.rotationAngle = 360
                         }
                     }
                 }

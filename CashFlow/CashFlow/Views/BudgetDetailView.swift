@@ -8,21 +8,20 @@
 import SwiftUI
 
 struct BudgetDetailView: View {
-    @Binding var expense: Expense
+    let expense: Expense
     
     var body: some View {
         VStack(alignment: .leading) {
             
-                VStack{ Image(systemName: expense.symbol)
-                        .font(.largeTitle)
-                        .foregroundStyle(.blue)
-                        .padding()
-                        .background(Color.blue.opacity(0.2))
-                        .clipShape(Circle())
-                }
+            VStack{ Image(systemName:ExpenseSymbols(rawValue:expense.symbol ?? "")?.symbol ?? "xmark")
+                    .font(.title)
+                    .frame(width: 60,height: 60)
+                    .background(ExpenseSymbols(rawValue:expense.symbol ?? "")?.color ?? .blue)
+                    .clipShape(Circle())
+            }
             
             
-            Text("Description: \(expense.description)")
+            Text("Description: \(expense.title ?? "")")
                 .font(.title)
                 .padding(.bottom, 10)
             
@@ -37,6 +36,3 @@ struct BudgetDetailView: View {
     }
 }
 
-#Preview {
-    BudgetDetailView(expense: .constant(Expense(amount: 20, description: "Groceries", symbol: "cart")))
-}

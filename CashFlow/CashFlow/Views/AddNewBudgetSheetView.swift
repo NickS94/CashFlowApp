@@ -8,55 +8,73 @@
 import SwiftUI
 
 struct AddNewBudgetSheetView: View {
-    @Environment(\.dismiss) var dismiss
-    @Binding var expenses: [Expense]
-    @Binding var salary: Double
     
-    @State private var amount: String = ""
-    @State private var description: String = ""
-    @State private var selectedSymbol: String = "cart"
-    
-    let symbols = ["cart", "car.fill", "cup.and.saucer.fill", "house.fill", "gift.fill"]
+    @ObservedObject var viewModel:TransactionsViewModel
     
     var body: some View {
-        NavigationStack {
+        NavigationStack{
+            
+            
             Form {
                 Section(header: Text("New Expense")) {
-                    TextField("Amount", text: $amount)
-                        .keyboardType(.decimalPad)
-                    TextField("Description", text: $description)
                     
-                    Picker("Select a Symbol", selection: $selectedSymbol) {
-                        ForEach(symbols, id: \.self) { symbol in
+                    TextField("Amount", text: $viewModel.amount)
+                        .keyboardType(.decimalPad)
+                    
+                    TextField("Description", text: $viewModel.title)
+                }
+                Section("Category") {
+                    Picker("Select a Category", selection: $viewModel.symbol) {
+                        ForEach(ExpenseSymbols.allCases, id: \.self) { symbol in
                             HStack {
-                                Image(systemName: symbol)
-                            
-                            }.tag(symbol)
+                                Image(systemName: symbol.symbol)
+                                    .font(.title)
+                                    .frame(width: 60,height: 60)
+                                    .background(symbol.color)
+                                    .clipShape(Circle())
+                                Text(symbol.rawValue)
+                                
+                            }
                         }
                     }
-                    .pickerStyle(.segmented)
+                    .pickerStyle(.navigationLink)
                 }
                 
-                Button("Add Expense") {
-                    if let amount = Double(amount), !description.isEmpty {
-                        let newExpense = Expense(amount: amount, description: description, symbol: selectedSymbol)
-                        expenses.append(newExpense)
-                        dismiss()
-                    }
-                }
             }
             .navigationTitle("Add Expense")
+            .toolbarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
-                        dismiss()
+                        viewModel.showSheet = false
                     }
                 }
+                ToolbarItem {
+                    Button {
+                        viewModel.addNewExpense()
+                    }label: {
+                        HStack{
+                            Text("Save")
+                            Image(systemName: "checkmark")
+                        }
+                    }
+                    .buttonStyle(.borderedProminent)
+                }
+            }
+        }
+        
+        ScrollView{
+            ForEach(viewModel.expensesList){ expense in
+                TransactionsRow(expense: expense)
+                    .onTapGesture {
+                        viewModel.setExistedParameters(expense)
+                    }
             }
         }
     }
 }
 
+
 #Preview {
-    AddNewBudgetSheetView(expenses: .constant([]), salary: .constant(2000.0))
+    AddNewBudgetSheetView(viewModel: TransactionsViewModel())
 }
