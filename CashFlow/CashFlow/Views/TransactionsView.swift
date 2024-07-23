@@ -14,6 +14,7 @@ struct TransactionsView: View {
     var body: some View {
         
         NavigationStack {
+            
             VStack(alignment: .leading) {
                 HStack {
                     Text("Remaining Salary:")
@@ -34,7 +35,20 @@ struct TransactionsView: View {
                     } label: {
                         TransactionsRow(expense: expense)
                     }
+                    .swipeActions{
+                        Button(role: .destructive) {
+                            viewModel.deleteExpense(expense)
+                        } label: {
+                            VStack{
+                                Image(systemName: "trash")
+                                Text("Delete")
+                            }
+                        }
+
+                    }
                 }
+                .listStyle(.inset)
+                
             }
             .toolbar {
                 ToolbarItem{
@@ -53,8 +67,9 @@ struct TransactionsView: View {
             }
             .sheet(isPresented: $viewModel.showSheet) {
                 AddNewBudgetSheetView(viewModel: viewModel)
+                    .alert(viewModel.alertText, isPresented: $viewModel.showAlert) {}
             }
-            .alert(viewModel.alertText, isPresented: $viewModel.showAlert) {}
+           
         }
     }
 }

@@ -13,10 +13,8 @@ struct AddNewBudgetSheetView: View {
     
     var body: some View {
         NavigationStack{
-            
-            
             Form {
-                Section(header: Text("New Expense")) {
+                Section("New Expense") {
                     
                     TextField("Amount", text: $viewModel.amount)
                         .keyboardType(.decimalPad)
@@ -39,17 +37,32 @@ struct AddNewBudgetSheetView: View {
                     }
                     .pickerStyle(.navigationLink)
                 }
-                
             }
+            
+            List(viewModel.expensesList){ expense in
+                TransactionsRow(expense: expense)
+                    .onTapGesture {
+                        viewModel.setExistedParameters(expense)
+                    }
+            }
+            .listStyle(.inset)
+            
             .navigationTitle("Add Expense")
             .toolbarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
+                    Button{
                         viewModel.showSheet = false
+                    }label: {
+                        HStack{
+                            Image(systemName: "xmark")
+                            Text("Cancel")
+                        }
                     }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.red)
                 }
-                ToolbarItem {
+                ToolbarItem(placement:.confirmationAction) {
                     Button {
                         viewModel.addNewExpense()
                     }label: {
@@ -61,18 +74,11 @@ struct AddNewBudgetSheetView: View {
                     .buttonStyle(.borderedProminent)
                 }
             }
-        }
-        
-        ScrollView{
-            ForEach(viewModel.expensesList){ expense in
-                TransactionsRow(expense: expense)
-                    .onTapGesture {
-                        viewModel.setExistedParameters(expense)
-                    }
-            }
+            
         }
     }
 }
+
 
 
 #Preview {

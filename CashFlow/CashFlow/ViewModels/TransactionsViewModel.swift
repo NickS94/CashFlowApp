@@ -45,6 +45,15 @@ class TransactionsViewModel:ObservableObject{
         }
     }
     
+    func deleteExpense(_ expense :Expense){
+        do{
+            try repository.deleteExpense(expense)
+            getData()
+        }catch{
+            print(error.localizedDescription)
+        }
+    }
+    
     func setExistedParameters(_ expense:Expense){
         
         title = expense.title ?? ""
