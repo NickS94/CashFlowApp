@@ -37,24 +37,36 @@ struct DetailsEditingForm: View {
                 HStack{
                     TextField("Description",text: $detailsViewModel.title)
                         .font(.title)
-                       
+                        .padding(5)
+                        .frame(maxWidth: .infinity , maxHeight: 50)
+                        .background(.gray.opacity(0.4))
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
                     
                     Image(systemName: "pencil")
+                        .font(.title)
+                        .foregroundStyle(.gray)
                 }
                 
             }
             
             Section("Amount") {
                 HStack{
-                    TextField("Amount:" ,text: $detailsViewModel.amount)
+                    TextField("Amount" ,text: $detailsViewModel.amount)
                         .font(.title)
                         .keyboardType(.decimalPad)
-                       
+                        .padding(5)
+                        .frame(maxWidth: .infinity , maxHeight: 50)
+                        .background(.gray.opacity(0.4))
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                    
                     Image(systemName: "pencil")
+                        .font(.title)
+                        .foregroundStyle(.gray)
                 }
                
             }
         }
+        .scrollContentBackground(.hidden)
     }
 }
 

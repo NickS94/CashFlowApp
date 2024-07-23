@@ -24,6 +24,8 @@ struct AddNewBudgetSheetView: View {
                     CategoryPicker(symbol: $addNewTransactionViewModel.symbol)
                 }
             }
+            .scrollContentBackground(.hidden)
+            
             List(addNewTransactionViewModel.expensesList){ expense in
                 TransactionsRow(expense: expense)
                     .onTapGesture {

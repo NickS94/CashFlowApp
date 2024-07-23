@@ -13,12 +13,15 @@ struct TextFields: View {
     @Binding var title:String
     var body: some View {
         
+        TextField("Description", text: $title)
+            .frame(maxWidth: .infinity , maxHeight: 50)
+            .textFieldStyle(.roundedBorder)
+        
         TextField("Amount", text: $amount)
             .keyboardType(.decimalPad)
             .textFieldStyle(.roundedBorder)
-        
-        TextField("Description", text: $title)
-            .textFieldStyle(.roundedBorder)
+            
+      
     }
 }
 

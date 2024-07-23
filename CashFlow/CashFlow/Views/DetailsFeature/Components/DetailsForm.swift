@@ -34,10 +34,11 @@ struct DetailsForm: View {
                 
                 Text(String(format : "%.2f" ,expense.amount) + "€")
                     .font(.title)
+                    .bold()
                  
             }
         }
-        
+        .scrollContentBackground(.hidden)
     }
 }
 
