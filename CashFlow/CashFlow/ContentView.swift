@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var salary: Double = 1500.0
     var body: some View {
         TabView {
             

@@ -8,24 +8,22 @@
 import SwiftUI
 
 struct BudgetRow: View {
-    let number :Double
+    @Binding var expense: Expense
+    
     var body: some View {
-        HStack{
-            Image(systemName: "cart")
+        HStack {
+            Image(systemName: expense.symbol)
                 .font(.system(size: 16))
                 .foregroundStyle(.white)
                 .padding()
                 .background(.blue)
                 .clipShape(Circle())
                
-            VStack(alignment:.leading,spacing: 5){
-                Text("Description")
-                Text("Date")
+            VStack(alignment: .leading, spacing: 5) {
+                Text(expense.description)
+                Text("Amount: \(expense.amount, specifier: "%.2f") €")
             }
             Spacer()
-            Text(String(format: "%.2f", number) + "€" )
-                .font(.system(size: 22))
-                .bold()
         }
         .padding(5)
         .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -34,5 +32,5 @@ struct BudgetRow: View {
 }
 
 #Preview {
-    BudgetRow(number: 50.5)
+    BudgetRow(expense: .constant(Expense(amount: 22.2, description: "Sample", symbol: "cart")))
 }
