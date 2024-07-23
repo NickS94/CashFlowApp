@@ -16,48 +16,26 @@ struct TransactionsView: View {
         NavigationStack {
             
             VStack(alignment: .leading) {
-                HStack {
-                    Text("Remaining Salary:")
-                    Spacer()
-                    
+                SummaryHeader {
+                    viewModel.getSummary()
                 }
-                .padding()
-                HStack {
-                    Text("Costs Summary:")
-                    Spacer()
-                    Text("\(String(format : "%.2f" , viewModel.getSummary()))€")
-                }
-                .padding()
-                
                 List(viewModel.expensesList){ expense in
                     NavigationLink {
-                        BudgetDetailView(detailsViewModel: TransactionsDetailsViewModel(expense:expense))
+                        TransactionDetailView(detailsViewModel: TransactionsDetailsViewModel(expense:expense))
                     } label: {
                         TransactionsRow(expense: expense)
                     }
                     .swipeActions{
-                        Button(role: .destructive) {
+                        SwipeDeleteButton {
                             viewModel.deleteExpense(expense)
-                        } label: {
-                            VStack{
-                                Image(systemName: "trash")
-                                Text("Delete")
-                            }
                         }
-
                     }
                 }
                 .listStyle(.inset)
             }
             .toolbar {
                 ToolbarItem{
-                    Button {
-                        viewModel.showSheet = true
-                    } label: {
-                        Image(systemName: "plus")
-                            .font(.title)
-                            .padding(5)
-                    }
+                    SheetButton(showSheet: $viewModel.showSheet)
                 }
             }
             .navigationTitle("Transactions")
@@ -65,10 +43,11 @@ struct TransactionsView: View {
                 viewModel.getData()
             }
             .sheet(isPresented: $viewModel.showSheet) {
-                AddNewBudgetSheetView(viewModel: viewModel)
+                AddNewBudgetSheetView(addNewTransactionViewModel: AddNewTransactionViewModel(expensesList: viewModel.expensesList, updateAction: {
+                    viewModel.getData()
+                }), showSheet: $viewModel.showSheet, showAlert: $viewModel.showAlert, alertText: $viewModel.alertText)
                     .alert(viewModel.alertText, isPresented: $viewModel.showAlert){}
             }
-           
         }
     }
 }

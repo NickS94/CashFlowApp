@@ -17,7 +17,7 @@
 		030BFEC42C4E84670093DBEB /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEC32C4E84670093DBEB /* SplashScreenView.swift */; };
 		030BFEC62C4E8BC00093DBEB /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEC52C4E8BC00093DBEB /* TransactionsView.swift */; };
 		030BFEC92C4E8FCB0093DBEB /* TransactionsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEC82C4E8FCB0093DBEB /* TransactionsRow.swift */; };
-		030BFECB2C4E97570093DBEB /* BudgetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFECA2C4E97570093DBEB /* BudgetDetailView.swift */; };
+		030BFECB2C4E97570093DBEB /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFECA2C4E97570093DBEB /* TransactionDetailView.swift */; };
 		030BFECD2C4E982D0093DBEB /* AddNewBudgetSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFECC2C4E982D0093DBEB /* AddNewBudgetSheetView.swift */; };
 		030BFED42C4FA1660093DBEB /* DatabaseModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 030BFED22C4FA1660093DBEB /* DatabaseModel.xcdatamodeld */; };
 		030BFED62C4FA2850093DBEB /* PersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFED52C4FA2850093DBEB /* PersistentStore.swift */; };
@@ -28,6 +28,15 @@
 		030BFEE32C4FFE420093DBEB /* TransactionsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEE22C4FFE420093DBEB /* TransactionsDetailsViewModel.swift */; };
 		030BFEE62C500DA70093DBEB /* DetailsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEE52C500DA70093DBEB /* DetailsForm.swift */; };
 		030BFEE82C500F4B0093DBEB /* DetailsEditingForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEE72C500F4B0093DBEB /* DetailsEditingForm.swift */; };
+		030BFEED2C5024920093DBEB /* TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEEC2C5024920093DBEB /* TextFields.swift */; };
+		030BFEEF2C50255C0093DBEB /* CategoryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEEE2C50255C0093DBEB /* CategoryPicker.swift */; };
+		030BFEF32C5027730093DBEB /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEF22C5027730093DBEB /* CancelButton.swift */; };
+		030BFEF52C5027CD0093DBEB /* AddNewTransactionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEF42C5027CD0093DBEB /* AddNewTransactionButton.swift */; };
+		030BFEF82C5029610093DBEB /* SwipeDeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEF72C5029610093DBEB /* SwipeDeleteButton.swift */; };
+		030BFEFA2C5029D70093DBEB /* SheetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEF92C5029D70093DBEB /* SheetButton.swift */; };
+		030BFEFC2C502A640093DBEB /* SummaryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEFB2C502A640093DBEB /* SummaryHeader.swift */; };
+		030BFEFE2C502B930093DBEB /* SaveDetailsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEFD2C502B930093DBEB /* SaveDetailsButton.swift */; };
+		030BFF022C502C8C0093DBEB /* AddNewTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFF012C502C8C0093DBEB /* AddNewTransactionViewModel.swift */; };
 		C638D6E42C4EFF77002C0EBF /* SetSalarySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C638D6E32C4EFF77002C0EBF /* SetSalarySheetView.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +71,7 @@
 		030BFEC32C4E84670093DBEB /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		030BFEC52C4E8BC00093DBEB /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
 		030BFEC82C4E8FCB0093DBEB /* TransactionsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRow.swift; sourceTree = "<group>"; };
-		030BFECA2C4E97570093DBEB /* BudgetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailView.swift; sourceTree = "<group>"; };
+		030BFECA2C4E97570093DBEB /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
 		030BFECC2C4E982D0093DBEB /* AddNewBudgetSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewBudgetSheetView.swift; sourceTree = "<group>"; };
 		030BFED32C4FA1660093DBEB /* DatabaseModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DatabaseModel.xcdatamodel; sourceTree = "<group>"; };
 		030BFED52C4FA2850093DBEB /* PersistentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStore.swift; sourceTree = "<group>"; };
@@ -73,6 +82,15 @@
 		030BFEE22C4FFE420093DBEB /* TransactionsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsDetailsViewModel.swift; sourceTree = "<group>"; };
 		030BFEE52C500DA70093DBEB /* DetailsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsForm.swift; sourceTree = "<group>"; };
 		030BFEE72C500F4B0093DBEB /* DetailsEditingForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsEditingForm.swift; sourceTree = "<group>"; };
+		030BFEEC2C5024920093DBEB /* TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFields.swift; sourceTree = "<group>"; };
+		030BFEEE2C50255C0093DBEB /* CategoryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPicker.swift; sourceTree = "<group>"; };
+		030BFEF22C5027730093DBEB /* CancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelButton.swift; sourceTree = "<group>"; };
+		030BFEF42C5027CD0093DBEB /* AddNewTransactionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTransactionButton.swift; sourceTree = "<group>"; };
+		030BFEF72C5029610093DBEB /* SwipeDeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDeleteButton.swift; sourceTree = "<group>"; };
+		030BFEF92C5029D70093DBEB /* SheetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetButton.swift; sourceTree = "<group>"; };
+		030BFEFB2C502A640093DBEB /* SummaryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHeader.swift; sourceTree = "<group>"; };
+		030BFEFD2C502B930093DBEB /* SaveDetailsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDetailsButton.swift; sourceTree = "<group>"; };
+		030BFF012C502C8C0093DBEB /* AddNewTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTransactionViewModel.swift; sourceTree = "<group>"; };
 		C638D6E32C4EFF77002C0EBF /* SetSalarySheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSalarySheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,12 +142,12 @@
 		030BFE972C4E5CD90093DBEB /* CashFlow */ = {
 			isa = PBXGroup;
 			children = (
+				030BFE982C4E5CD90093DBEB /* CashFlowApp.swift */,
+				030BFEC32C4E84670093DBEB /* SplashScreenView.swift */,
+				030BFE9A2C4E5CD90093DBEB /* ContentView.swift */,
 				030BFEDF2C4FE1410093DBEB /* Helpers */,
 				030BFEDC2C4FAEB20093DBEB /* Enums */,
-				030BFED92C4FAD630093DBEB /* ViewModels */,
 				C638D6E02C4EFA7E002C0EBF /* Model */,
-				030BFE982C4E5CD90093DBEB /* CashFlowApp.swift */,
-				030BFE9A2C4E5CD90093DBEB /* ContentView.swift */,
 				030BFEC22C4E84520093DBEB /* Views */,
 				030BFE9C2C4E5CDA0093DBEB /* Assets.xcassets */,
 				030BFE9E2C4E5CDA0093DBEB /* Preview Content */,
@@ -165,32 +183,22 @@
 		030BFEC22C4E84520093DBEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				030BFEE42C500D850093DBEB /* TransactionsDetailsComp */,
-				030BFEC72C4E8F780093DBEB /* TransactionsListComp */,
-				030BFEC32C4E84670093DBEB /* SplashScreenView.swift */,
-				030BFEC52C4E8BC00093DBEB /* TransactionsView.swift */,
-				030BFECA2C4E97570093DBEB /* BudgetDetailView.swift */,
-				030BFECC2C4E982D0093DBEB /* AddNewBudgetSheetView.swift */,
+				030BFEC72C4E8F780093DBEB /* TransactionsListHome */,
+				030BFEE42C500D850093DBEB /* DetailsFeature */,
+				030BFEE92C5023B80093DBEB /* AddNewTransactionFeature */,
 				C638D6E32C4EFF77002C0EBF /* SetSalarySheetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		030BFEC72C4E8F780093DBEB /* TransactionsListComp */ = {
+		030BFEC72C4E8F780093DBEB /* TransactionsListHome */ = {
 			isa = PBXGroup;
 			children = (
-				030BFEC82C4E8FCB0093DBEB /* TransactionsRow.swift */,
+				030BFF032C5031A90093DBEB /* ViewModels */,
+				030BFEF62C5028810093DBEB /* Components */,
+				030BFEC52C4E8BC00093DBEB /* TransactionsView.swift */,
 			);
-			path = TransactionsListComp;
-			sourceTree = "<group>";
-		};
-		030BFED92C4FAD630093DBEB /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				030BFEDA2C4FAD770093DBEB /* TransactionsViewModel.swift */,
-				030BFEE22C4FFE420093DBEB /* TransactionsDetailsViewModel.swift */,
-			);
-			path = ViewModels;
+			path = TransactionsListHome;
 			sourceTree = "<group>";
 		};
 		030BFEDC2C4FAEB20093DBEB /* Enums */ = {
@@ -209,13 +217,80 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		030BFEE42C500D850093DBEB /* TransactionsDetailsComp */ = {
+		030BFEE42C500D850093DBEB /* DetailsFeature */ = {
 			isa = PBXGroup;
 			children = (
-				030BFEE52C500DA70093DBEB /* DetailsForm.swift */,
-				030BFEE72C500F4B0093DBEB /* DetailsEditingForm.swift */,
+				030BFF002C502C3B0093DBEB /* ViewModels */,
+				030BFEEA2C50242E0093DBEB /* Components */,
+				030BFECA2C4E97570093DBEB /* TransactionDetailView.swift */,
 			);
-			path = TransactionsDetailsComp;
+			path = DetailsFeature;
+			sourceTree = "<group>";
+		};
+		030BFEE92C5023B80093DBEB /* AddNewTransactionFeature */ = {
+			isa = PBXGroup;
+			children = (
+				030BFEFF2C502C330093DBEB /* ViewModels */,
+				030BFEEB2C50246B0093DBEB /* Components */,
+				030BFECC2C4E982D0093DBEB /* AddNewBudgetSheetView.swift */,
+			);
+			path = AddNewTransactionFeature;
+			sourceTree = "<group>";
+		};
+		030BFEEA2C50242E0093DBEB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				030BFEE72C500F4B0093DBEB /* DetailsEditingForm.swift */,
+				030BFEE52C500DA70093DBEB /* DetailsForm.swift */,
+				030BFEFD2C502B930093DBEB /* SaveDetailsButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		030BFEEB2C50246B0093DBEB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				030BFEEC2C5024920093DBEB /* TextFields.swift */,
+				030BFEEE2C50255C0093DBEB /* CategoryPicker.swift */,
+				030BFEF22C5027730093DBEB /* CancelButton.swift */,
+				030BFEF42C5027CD0093DBEB /* AddNewTransactionButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		030BFEF62C5028810093DBEB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				030BFEC82C4E8FCB0093DBEB /* TransactionsRow.swift */,
+				030BFEF72C5029610093DBEB /* SwipeDeleteButton.swift */,
+				030BFEF92C5029D70093DBEB /* SheetButton.swift */,
+				030BFEFB2C502A640093DBEB /* SummaryHeader.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		030BFEFF2C502C330093DBEB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				030BFF012C502C8C0093DBEB /* AddNewTransactionViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		030BFF002C502C3B0093DBEB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				030BFEE22C4FFE420093DBEB /* TransactionsDetailsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		030BFF032C5031A90093DBEB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				030BFEDA2C4FAD770093DBEB /* TransactionsViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		C638D6E02C4EFA7E002C0EBF /* Model */ = {
@@ -358,23 +433,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				030BFEFA2C5029D70093DBEB /* SheetButton.swift in Sources */,
 				030BFEE32C4FFE420093DBEB /* TransactionsDetailsViewModel.swift in Sources */,
+				030BFEEF2C50255C0093DBEB /* CategoryPicker.swift in Sources */,
 				030BFEE82C500F4B0093DBEB /* DetailsEditingForm.swift in Sources */,
 				030BFEDE2C4FAECF0093DBEB /* ExpenseSymbols.swift in Sources */,
 				030BFECD2C4E982D0093DBEB /* AddNewBudgetSheetView.swift in Sources */,
 				030BFE9B2C4E5CD90093DBEB /* ContentView.swift in Sources */,
+				030BFEED2C5024920093DBEB /* TextFields.swift in Sources */,
 				030BFEC92C4E8FCB0093DBEB /* TransactionsRow.swift in Sources */,
+				030BFEF52C5027CD0093DBEB /* AddNewTransactionButton.swift in Sources */,
 				030BFEC62C4E8BC00093DBEB /* TransactionsView.swift in Sources */,
 				030BFEE62C500DA70093DBEB /* DetailsForm.swift in Sources */,
 				030BFE992C4E5CD90093DBEB /* CashFlowApp.swift in Sources */,
 				030BFED42C4FA1660093DBEB /* DatabaseModel.xcdatamodeld in Sources */,
 				C638D6E42C4EFF77002C0EBF /* SetSalarySheetView.swift in Sources */,
+				030BFEFE2C502B930093DBEB /* SaveDetailsButton.swift in Sources */,
 				030BFEE12C4FE15A0093DBEB /* DateFormatterHelper.swift in Sources */,
 				030BFEDB2C4FAD770093DBEB /* TransactionsViewModel.swift in Sources */,
 				030BFED62C4FA2850093DBEB /* PersistentStore.swift in Sources */,
-				030BFECB2C4E97570093DBEB /* BudgetDetailView.swift in Sources */,
+				030BFEF82C5029610093DBEB /* SwipeDeleteButton.swift in Sources */,
+				030BFF022C502C8C0093DBEB /* AddNewTransactionViewModel.swift in Sources */,
+				030BFECB2C4E97570093DBEB /* TransactionDetailView.swift in Sources */,
 				030BFEC42C4E84670093DBEB /* SplashScreenView.swift in Sources */,
+				030BFEFC2C502A640093DBEB /* SummaryHeader.swift in Sources */,
 				030BFED82C4FA2C80093DBEB /* Repository.swift in Sources */,
+				030BFEF32C5027730093DBEB /* CancelButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

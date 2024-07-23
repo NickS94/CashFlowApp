@@ -48,6 +48,7 @@ struct DetailsEditingForm: View {
                 HStack{
                     TextField("Amount:" ,text: $detailsViewModel.amount)
                         .font(.title)
+                        .keyboardType(.decimalPad)
                        
                     Image(systemName: "pencil")
                 }

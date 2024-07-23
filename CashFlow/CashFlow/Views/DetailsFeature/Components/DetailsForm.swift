@@ -24,7 +24,7 @@ struct DetailsForm: View {
         }
         
         Form {
-            Section("Descriptions") {
+            Section("Description") {
                 Text((expense.title ?? ""))
                     .font(.title)
                 
