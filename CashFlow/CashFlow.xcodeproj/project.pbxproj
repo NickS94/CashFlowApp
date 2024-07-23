@@ -25,6 +25,9 @@
 		030BFEDB2C4FAD770093DBEB /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEDA2C4FAD770093DBEB /* TransactionsViewModel.swift */; };
 		030BFEDE2C4FAECF0093DBEB /* ExpenseSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEDD2C4FAECF0093DBEB /* ExpenseSymbols.swift */; };
 		030BFEE12C4FE15A0093DBEB /* DateFormatterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEE02C4FE15A0093DBEB /* DateFormatterHelper.swift */; };
+		030BFEE32C4FFE420093DBEB /* TransactionsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEE22C4FFE420093DBEB /* TransactionsDetailsViewModel.swift */; };
+		030BFEE62C500DA70093DBEB /* DetailsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEE52C500DA70093DBEB /* DetailsForm.swift */; };
+		030BFEE82C500F4B0093DBEB /* DetailsEditingForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEE72C500F4B0093DBEB /* DetailsEditingForm.swift */; };
 		C638D6E42C4EFF77002C0EBF /* SetSalarySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C638D6E32C4EFF77002C0EBF /* SetSalarySheetView.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +70,9 @@
 		030BFEDA2C4FAD770093DBEB /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
 		030BFEDD2C4FAECF0093DBEB /* ExpenseSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSymbols.swift; sourceTree = "<group>"; };
 		030BFEE02C4FE15A0093DBEB /* DateFormatterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterHelper.swift; sourceTree = "<group>"; };
+		030BFEE22C4FFE420093DBEB /* TransactionsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsDetailsViewModel.swift; sourceTree = "<group>"; };
+		030BFEE52C500DA70093DBEB /* DetailsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsForm.swift; sourceTree = "<group>"; };
+		030BFEE72C500F4B0093DBEB /* DetailsEditingForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsEditingForm.swift; sourceTree = "<group>"; };
 		C638D6E32C4EFF77002C0EBF /* SetSalarySheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSalarySheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +165,7 @@
 		030BFEC22C4E84520093DBEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				030BFEE42C500D850093DBEB /* TransactionsDetailsComp */,
 				030BFEC72C4E8F780093DBEB /* TransactionsListComp */,
 				030BFEC32C4E84670093DBEB /* SplashScreenView.swift */,
 				030BFEC52C4E8BC00093DBEB /* TransactionsView.swift */,
@@ -181,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				030BFEDA2C4FAD770093DBEB /* TransactionsViewModel.swift */,
+				030BFEE22C4FFE420093DBEB /* TransactionsDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -199,6 +207,15 @@
 				030BFEE02C4FE15A0093DBEB /* DateFormatterHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		030BFEE42C500D850093DBEB /* TransactionsDetailsComp */ = {
+			isa = PBXGroup;
+			children = (
+				030BFEE52C500DA70093DBEB /* DetailsForm.swift */,
+				030BFEE72C500F4B0093DBEB /* DetailsEditingForm.swift */,
+			);
+			path = TransactionsDetailsComp;
 			sourceTree = "<group>";
 		};
 		C638D6E02C4EFA7E002C0EBF /* Model */ = {
@@ -341,11 +358,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				030BFEE32C4FFE420093DBEB /* TransactionsDetailsViewModel.swift in Sources */,
+				030BFEE82C500F4B0093DBEB /* DetailsEditingForm.swift in Sources */,
 				030BFEDE2C4FAECF0093DBEB /* ExpenseSymbols.swift in Sources */,
 				030BFECD2C4E982D0093DBEB /* AddNewBudgetSheetView.swift in Sources */,
 				030BFE9B2C4E5CD90093DBEB /* ContentView.swift in Sources */,
 				030BFEC92C4E8FCB0093DBEB /* TransactionsRow.swift in Sources */,
 				030BFEC62C4E8BC00093DBEB /* TransactionsView.swift in Sources */,
+				030BFEE62C500DA70093DBEB /* DetailsForm.swift in Sources */,
 				030BFE992C4E5CD90093DBEB /* CashFlowApp.swift in Sources */,
 				030BFED42C4FA1660093DBEB /* DatabaseModel.xcdatamodeld in Sources */,
 				C638D6E42C4EFF77002C0EBF /* SetSalarySheetView.swift in Sources */,

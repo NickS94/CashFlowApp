@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TransactionsView: View {
     
-    @StateObject var viewModel = TransactionsViewModel()
+    @StateObject var viewModel = TransactionsViewModel ()
     
     var body: some View {
         
@@ -31,7 +31,7 @@ struct TransactionsView: View {
                 
                 List(viewModel.expensesList){ expense in
                     NavigationLink {
-                        BudgetDetailView(expense: expense)
+                        BudgetDetailView(detailsViewModel: TransactionsDetailsViewModel(expense:expense))
                     } label: {
                         TransactionsRow(expense: expense)
                     }
@@ -48,7 +48,6 @@ struct TransactionsView: View {
                     }
                 }
                 .listStyle(.inset)
-                
             }
             .toolbar {
                 ToolbarItem{
@@ -67,7 +66,7 @@ struct TransactionsView: View {
             }
             .sheet(isPresented: $viewModel.showSheet) {
                 AddNewBudgetSheetView(viewModel: viewModel)
-                    .alert(viewModel.alertText, isPresented: $viewModel.showAlert) {}
+                    .alert(viewModel.alertText, isPresented: $viewModel.showAlert){}
             }
            
         }

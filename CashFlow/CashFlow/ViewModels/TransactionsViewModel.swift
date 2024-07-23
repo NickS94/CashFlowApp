@@ -18,7 +18,9 @@ class TransactionsViewModel:ObservableObject{
     @Published var showAlert = false
     @Published var alertText = ""
     
+    
     private let repository = Repository.sharedInstance
+    
     
     
     func getData(){

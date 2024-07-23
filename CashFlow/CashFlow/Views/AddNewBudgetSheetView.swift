@@ -18,11 +18,14 @@ struct AddNewBudgetSheetView: View {
                     
                     TextField("Amount", text: $viewModel.amount)
                         .keyboardType(.decimalPad)
+                        .textFieldStyle(.roundedBorder)
                     
                     TextField("Description", text: $viewModel.title)
+                        .textFieldStyle(.roundedBorder)
                 }
                 Section("Category") {
                     Picker("Select a Category", selection: $viewModel.symbol) {
+                        
                         ForEach(ExpenseSymbols.allCases, id: \.self) { symbol in
                             HStack {
                                 Image(systemName: symbol.symbol)

@@ -8,31 +8,40 @@
 import SwiftUI
 
 struct BudgetDetailView: View {
-    let expense: Expense
     
+    @ObservedObject var detailsViewModel : TransactionsDetailsViewModel
+
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack {
             
-            VStack{ Image(systemName:ExpenseSymbols(rawValue:expense.symbol ?? "")?.symbol ?? "xmark")
-                    .font(.title)
-                    .frame(width: 60,height: 60)
-                    .background(ExpenseSymbols(rawValue:expense.symbol ?? "")?.color ?? .blue)
-                    .clipShape(Circle())
+            if detailsViewModel.isEditing{
+                
+                DetailsEditingForm(detailsViewModel: detailsViewModel)
+                
+            }else{
+                
+                DetailsForm(expense: detailsViewModel.expense)
             }
-            
-            
-            Text("Description: \(expense.title ?? "")")
-                .font(.title)
-                .padding(.bottom, 10)
-            
-            Text("Amount: \(expense.amount, specifier: "%.2f") €")
-                .font(.title)
-                .padding(.bottom, 10)
-            
-            Spacer()
+
+            Button{
+                detailsViewModel.isEditing = true
+                
+                detailsViewModel.counter += 1
+                
+                if detailsViewModel.counter == 2{
+                    detailsViewModel.updateExpense()
+                }
+                
+            }label: {
+                HStack{
+                    Text(detailsViewModel.isEditing ? "Save" : "Edit")
+                    Image(systemName: detailsViewModel.isEditing ? "checkmark" : "pencil")
+                }
+            }
+            .buttonStyle(.borderedProminent)
         }
         .padding()
         .navigationTitle("Expense Detail")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
-

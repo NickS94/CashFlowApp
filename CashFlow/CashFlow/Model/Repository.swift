@@ -35,10 +35,19 @@ class Repository{
     }
     
     
-    func editExpense (_ expense:Expense,_ title:String,_ amount:Double,_ symbol:String) throws{
-        expense.amount = amount
-        expense.title = title
-        expense.symbol = symbol
+    func editExpense (_ expense:Expense,_ title:String? = nil,_ amount:Double? = nil,_ symbol:String? = nil) throws{
+        
+        if let title = title{
+            expense.title = title
+        }
+        
+        if let amount = amount{
+            expense.amount = amount
+        }
+       
+        if let symbol = symbol{
+            expense.symbol = symbol
+        }
         
         try store.context.save()
     }

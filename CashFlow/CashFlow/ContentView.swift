@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
- 
+    
     var body: some View {
         TabView {
-            
             TransactionsView()
                 .tabItem {
                     VStack{
@@ -20,7 +19,6 @@ struct ContentView: View {
                     }
                 }
             
-            
             Text("HALLO")
                 .tabItem {
                     VStack{
@@ -28,7 +26,6 @@ struct ContentView: View {
                         Text("Settings")
                     }
                 }
-            
         }
     }
 }
