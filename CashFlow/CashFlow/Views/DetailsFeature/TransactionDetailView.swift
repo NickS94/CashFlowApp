@@ -21,7 +21,7 @@ struct TransactionDetailView: View {
                 
             }else{
                 
-                DetailsForm(expense: detailsViewModel.expense)
+                DetailsForm(transaction: detailsViewModel.transaction)
             }
             SaveDetailsButton(isEditing: $detailsViewModel.isEditing, counter: $detailsViewModel.counter) {
                 detailsViewModel.updateExpense()

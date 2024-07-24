@@ -8,34 +8,43 @@
 import SwiftUI
 
 struct DetailsForm: View {
-    let expense : Expense
+    let transaction : TransactionEntity
     var body: some View {
       
         HStack{
-            Image(systemName:ExpenseSymbols(rawValue:expense.symbol ?? "")?.symbol ?? "xmark")
+            Image(systemName:TransactionSymbols(rawValue:transaction.symbol ?? "")?.symbol ?? "xmark")
                 .font(.title)
                 .frame(width: 60,height: 60)
-                .background(ExpenseSymbols(rawValue:expense.symbol ?? "")?.color ?? .blue)
+                .background(TransactionSymbols(rawValue:transaction.symbol ?? "")?.color ?? .blue)
                 .clipShape(Circle())
             
-            Text(ExpenseSymbols(rawValue:expense.symbol ?? "")?.rawValue ?? "")
+            Text(TransactionSymbols(rawValue:transaction.symbol ?? "")?.rawValue ?? "")
                 .font(.system(size: 18))
                 .bold()
         }
         
         Form {
             Section("Description") {
-                Text((expense.title ?? ""))
+                Text((transaction.title ?? ""))
                     .font(.title)
+                    
                 
             }
             
             Section("Amount") {
                 
-                Text(String(format : "%.2f" ,expense.amount) + "€")
+                Text(String(format : "%.2f" ,transaction.amount) + "€")
                     .font(.title)
                     .bold()
+                    
                  
+            }
+            
+            Section("Type") {
+                Text(transaction.isIncome ? "Income" : "Expense")
+                    .font(.title)
+                    .bold()
+                    .foregroundStyle(transaction.isIncome ? .green : .red)
             }
         }
         .scrollContentBackground(.hidden)

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 
-enum ExpenseSymbols:String,CaseIterable{
+enum TransactionSymbols:String,CaseIterable{
     
     case groceries = "Groceries"
     case rent = "Rent"
@@ -30,7 +30,7 @@ enum ExpenseSymbols:String,CaseIterable{
     case subscriptions = "Subscriptions"
     case transportation = "Transportation"
     case savings = "Savings"
-    
+    case income = "Income"
     
     
     var symbol: String {
@@ -73,6 +73,8 @@ enum ExpenseSymbols:String,CaseIterable{
             return "car.fill"
         case .savings:
             return "banknote.fill"
+        case .income:
+            return "eurosign.circle"
         }
     }
     
@@ -118,6 +120,8 @@ enum ExpenseSymbols:String,CaseIterable{
                 .amber
         case .savings:
                 .forestGreen
+        case .income:
+                .yellow
         }
     }
 }

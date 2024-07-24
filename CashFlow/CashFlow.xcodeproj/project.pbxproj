@@ -19,11 +19,10 @@
 		030BFEC92C4E8FCB0093DBEB /* TransactionsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEC82C4E8FCB0093DBEB /* TransactionsRow.swift */; };
 		030BFECB2C4E97570093DBEB /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFECA2C4E97570093DBEB /* TransactionDetailView.swift */; };
 		030BFECD2C4E982D0093DBEB /* AddNewBudgetSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFECC2C4E982D0093DBEB /* AddNewBudgetSheetView.swift */; };
-		030BFED42C4FA1660093DBEB /* DatabaseModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 030BFED22C4FA1660093DBEB /* DatabaseModel.xcdatamodeld */; };
 		030BFED62C4FA2850093DBEB /* PersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFED52C4FA2850093DBEB /* PersistentStore.swift */; };
 		030BFED82C4FA2C80093DBEB /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFED72C4FA2C80093DBEB /* Repository.swift */; };
 		030BFEDB2C4FAD770093DBEB /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEDA2C4FAD770093DBEB /* TransactionsViewModel.swift */; };
-		030BFEDE2C4FAECF0093DBEB /* ExpenseSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEDD2C4FAECF0093DBEB /* ExpenseSymbols.swift */; };
+		030BFEDE2C4FAECF0093DBEB /* TransactionSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEDD2C4FAECF0093DBEB /* TransactionSymbols.swift */; };
 		030BFEE12C4FE15A0093DBEB /* DateFormatterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEE02C4FE15A0093DBEB /* DateFormatterHelper.swift */; };
 		030BFEE32C4FFE420093DBEB /* TransactionsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEE22C4FFE420093DBEB /* TransactionsDetailsViewModel.swift */; };
 		030BFEE62C500DA70093DBEB /* DetailsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEE52C500DA70093DBEB /* DetailsForm.swift */; };
@@ -37,7 +36,8 @@
 		030BFEFC2C502A640093DBEB /* SummaryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEFB2C502A640093DBEB /* SummaryHeader.swift */; };
 		030BFEFE2C502B930093DBEB /* SaveDetailsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEFD2C502B930093DBEB /* SaveDetailsButton.swift */; };
 		030BFF022C502C8C0093DBEB /* AddNewTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFF012C502C8C0093DBEB /* AddNewTransactionViewModel.swift */; };
-		C638D6E42C4EFF77002C0EBF /* SetSalarySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C638D6E32C4EFF77002C0EBF /* SetSalarySheetView.swift */; };
+		0381183F2C50C28A0020BB3E /* DatabaseModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0381183D2C50C28A0020BB3E /* DatabaseModel.xcdatamodeld */; };
+		C638D6E42C4EFF77002C0EBF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C638D6E32C4EFF77002C0EBF /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,11 +73,10 @@
 		030BFEC82C4E8FCB0093DBEB /* TransactionsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRow.swift; sourceTree = "<group>"; };
 		030BFECA2C4E97570093DBEB /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
 		030BFECC2C4E982D0093DBEB /* AddNewBudgetSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewBudgetSheetView.swift; sourceTree = "<group>"; };
-		030BFED32C4FA1660093DBEB /* DatabaseModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DatabaseModel.xcdatamodel; sourceTree = "<group>"; };
 		030BFED52C4FA2850093DBEB /* PersistentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStore.swift; sourceTree = "<group>"; };
 		030BFED72C4FA2C80093DBEB /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		030BFEDA2C4FAD770093DBEB /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
-		030BFEDD2C4FAECF0093DBEB /* ExpenseSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSymbols.swift; sourceTree = "<group>"; };
+		030BFEDD2C4FAECF0093DBEB /* TransactionSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSymbols.swift; sourceTree = "<group>"; };
 		030BFEE02C4FE15A0093DBEB /* DateFormatterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterHelper.swift; sourceTree = "<group>"; };
 		030BFEE22C4FFE420093DBEB /* TransactionsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsDetailsViewModel.swift; sourceTree = "<group>"; };
 		030BFEE52C500DA70093DBEB /* DetailsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsForm.swift; sourceTree = "<group>"; };
@@ -91,7 +90,8 @@
 		030BFEFB2C502A640093DBEB /* SummaryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHeader.swift; sourceTree = "<group>"; };
 		030BFEFD2C502B930093DBEB /* SaveDetailsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDetailsButton.swift; sourceTree = "<group>"; };
 		030BFF012C502C8C0093DBEB /* AddNewTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTransactionViewModel.swift; sourceTree = "<group>"; };
-		C638D6E32C4EFF77002C0EBF /* SetSalarySheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSalarySheetView.swift; sourceTree = "<group>"; };
+		0381183E2C50C28A0020BB3E /* DatabaseModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DatabaseModel.xcdatamodel; sourceTree = "<group>"; };
+		C638D6E32C4EFF77002C0EBF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,7 +186,7 @@
 				030BFEC72C4E8F780093DBEB /* TransactionsListHome */,
 				030BFEE42C500D850093DBEB /* DetailsFeature */,
 				030BFEE92C5023B80093DBEB /* AddNewTransactionFeature */,
-				C638D6E32C4EFF77002C0EBF /* SetSalarySheetView.swift */,
+				C638D6E32C4EFF77002C0EBF /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,7 +204,7 @@
 		030BFEDC2C4FAEB20093DBEB /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				030BFEDD2C4FAECF0093DBEB /* ExpenseSymbols.swift */,
+				030BFEDD2C4FAECF0093DBEB /* TransactionSymbols.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -296,7 +296,7 @@
 		C638D6E02C4EFA7E002C0EBF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				030BFED22C4FA1660093DBEB /* DatabaseModel.xcdatamodeld */,
+				0381183D2C50C28A0020BB3E /* DatabaseModel.xcdatamodeld */,
 				030BFED52C4FA2850093DBEB /* PersistentStore.swift */,
 				030BFED72C4FA2C80093DBEB /* Repository.swift */,
 			);
@@ -437,7 +437,7 @@
 				030BFEE32C4FFE420093DBEB /* TransactionsDetailsViewModel.swift in Sources */,
 				030BFEEF2C50255C0093DBEB /* CategoryPicker.swift in Sources */,
 				030BFEE82C500F4B0093DBEB /* DetailsEditingForm.swift in Sources */,
-				030BFEDE2C4FAECF0093DBEB /* ExpenseSymbols.swift in Sources */,
+				030BFEDE2C4FAECF0093DBEB /* TransactionSymbols.swift in Sources */,
 				030BFECD2C4E982D0093DBEB /* AddNewBudgetSheetView.swift in Sources */,
 				030BFE9B2C4E5CD90093DBEB /* ContentView.swift in Sources */,
 				030BFEED2C5024920093DBEB /* TextFields.swift in Sources */,
@@ -445,9 +445,9 @@
 				030BFEF52C5027CD0093DBEB /* AddNewTransactionButton.swift in Sources */,
 				030BFEC62C4E8BC00093DBEB /* TransactionsView.swift in Sources */,
 				030BFEE62C500DA70093DBEB /* DetailsForm.swift in Sources */,
+				0381183F2C50C28A0020BB3E /* DatabaseModel.xcdatamodeld in Sources */,
 				030BFE992C4E5CD90093DBEB /* CashFlowApp.swift in Sources */,
-				030BFED42C4FA1660093DBEB /* DatabaseModel.xcdatamodeld in Sources */,
-				C638D6E42C4EFF77002C0EBF /* SetSalarySheetView.swift in Sources */,
+				C638D6E42C4EFF77002C0EBF /* ProfileView.swift in Sources */,
 				030BFEFE2C502B930093DBEB /* SaveDetailsButton.swift in Sources */,
 				030BFEE12C4FE15A0093DBEB /* DateFormatterHelper.swift in Sources */,
 				030BFEDB2C4FAD770093DBEB /* TransactionsViewModel.swift in Sources */,
@@ -790,12 +790,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		030BFED22C4FA1660093DBEB /* DatabaseModel.xcdatamodeld */ = {
+		0381183D2C50C28A0020BB3E /* DatabaseModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				030BFED32C4FA1660093DBEB /* DatabaseModel.xcdatamodel */,
+				0381183E2C50C28A0020BB3E /* DatabaseModel.xcdatamodel */,
 			);
-			currentVersion = 030BFED32C4FA1660093DBEB /* DatabaseModel.xcdatamodel */;
+			currentVersion = 0381183E2C50C28A0020BB3E /* DatabaseModel.xcdatamodel */;
 			name = DatabaseModel.xcdatamodeld;
 			path = /Users/nikosstauropoulos/iOS_Projektwoche2_Gruppe1/CashFlow/CashFlow/Model/DatabaseModel.xcdatamodeld;
 			sourceTree = "<group>";

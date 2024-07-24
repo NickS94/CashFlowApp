@@ -17,17 +17,20 @@ struct TransactionsView: View {
             
             VStack(alignment: .leading) {
                 SummaryHeader {
-                    viewModel.getSummary()
+                    viewModel.getExpenseSummary()
+                } actionIncomeSummary: {
+                    viewModel.getIncomeSummary()
                 }
-                List(viewModel.expensesList){ expense in
+
+                List(viewModel.transactionsList){ transaction in
                     NavigationLink {
-                        TransactionDetailView(detailsViewModel: TransactionsDetailsViewModel(expense:expense))
+                        TransactionDetailView(detailsViewModel: TransactionsDetailsViewModel(transaction:transaction))
                     } label: {
-                        TransactionsRow(expense: expense)
+                        TransactionsRow(transaction:transaction)
                     }
                     .swipeActions{
                         SwipeDeleteButton {
-                            viewModel.deleteExpense(expense)
+                            viewModel.deleteTransaction(transaction)
                         }
                     }
                 }
@@ -43,7 +46,7 @@ struct TransactionsView: View {
                 viewModel.getData()
             }
             .sheet(isPresented: $viewModel.showSheet) {
-                AddNewBudgetSheetView(addNewTransactionViewModel: AddNewTransactionViewModel(expensesList: viewModel.expensesList, updateAction: {
+                AddNewBudgetSheetView(addNewTransactionViewModel: AddNewTransactionViewModel(transactionsList: viewModel.transactionsList, updateAction: {
                     viewModel.getData()
                 }), showSheet: $viewModel.showSheet, showAlert: $viewModel.showAlert, alertText: $viewModel.alertText)
                     .alert(viewModel.alertText, isPresented: $viewModel.showAlert){}

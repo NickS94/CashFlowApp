@@ -14,22 +14,24 @@ class TransactionsDetailsViewModel:ObservableObject{
     @Published var isEditing = false
     @Published var title:String
     @Published var amount:String
-    @Published var symbol:ExpenseSymbols
+    @Published var symbol:TransactionSymbols
+    @Published var isIncome:Bool
     @Published var counter = 0
     
     
-    let expense :Expense
+    let transaction :TransactionEntity
     
     private let repository = Repository.sharedInstance
     
     
-    init(expense: Expense) {
-        self.expense = expense
-        self.title = expense.title ?? ""
-        self.amount = String(expense.amount)
+    init(transaction: TransactionEntity) {
+        self.transaction = transaction
+        self.title = transaction.title ?? ""
+        self.amount = String(transaction.amount)
+        self.isIncome = transaction.isIncome
         
-        if let expenseSymbol = ExpenseSymbols(rawValue: expense.symbol ?? "") {
-            self.symbol = expenseSymbol
+        if let transactionSymbol = TransactionSymbols(rawValue: transaction.symbol ?? "") {
+            self.symbol = transactionSymbol
         } else {
             self.symbol = .groceries
         }
@@ -38,14 +40,12 @@ class TransactionsDetailsViewModel:ObservableObject{
     
     func updateExpense(){
         do{
-            try repository.editExpense(expense,title,Double(amount) ?? 0,symbol.rawValue)
+            try repository.editExpense(transaction,title,Double(amount) ?? 0,symbol.rawValue ,isIncome)
             counter = 0
             isEditing = false
         }catch{
             print(error.localizedDescription)
         }
     }
-    
-    
     
 }

@@ -16,7 +16,7 @@ struct DetailsEditingForm: View {
             HStack{
                 Picker("Select Category", selection: $detailsViewModel.symbol) {
                     
-                    ForEach(ExpenseSymbols.allCases, id: \.self) { symbol in
+                    ForEach(TransactionSymbols.allCases, id: \.self) { symbol in
                         HStack {
                             Image(systemName: symbol.symbol)
                                 .font(.title)
@@ -64,6 +64,10 @@ struct DetailsEditingForm: View {
                         .foregroundStyle(.gray)
                 }
                
+            }
+            
+            Section("Type") {
+                Toggle(detailsViewModel.isIncome ? "Income" : "Expense", isOn: $detailsViewModel.isIncome)
             }
         }
         .scrollContentBackground(.hidden)

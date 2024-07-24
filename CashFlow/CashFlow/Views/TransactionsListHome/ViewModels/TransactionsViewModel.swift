@@ -10,7 +10,7 @@ import Foundation
 
 class TransactionsViewModel:ObservableObject{
     
-    @Published var expensesList :[Expense] = []
+    @Published var transactionsList :[TransactionEntity] = []
     
     @Published var showSheet = false
     @Published var showAlert = false
@@ -18,21 +18,20 @@ class TransactionsViewModel:ObservableObject{
     
     
     private let repository = Repository.sharedInstance
-    
-    
+  
     
     func getData(){
         do{
-            expensesList = try repository.fetchExpenses()
+            transactionsList = try repository.fetchTransactions()
         }catch{
             print(error.localizedDescription)
         }
     }
 
     
-    func deleteExpense(_ expense :Expense){
+    func deleteTransaction(_ transaction :TransactionEntity){
         do{
-            try repository.deleteExpense(expense)
+            try repository.deleteExpense(transaction)
             getData()
         }catch{
             print(error.localizedDescription)
@@ -41,10 +40,19 @@ class TransactionsViewModel:ObservableObject{
     
     
    
-    func getSummary() -> Double{
+    func getExpenseSummary() -> Double{
         
-        return expensesList.reduce(0){$0 + $1.amount}
+        let expenseList = transactionsList.filter{!$0.isIncome}
         
+        return expenseList.reduce(0){$0 + $1.amount}
+        
+    }
+    
+    func getIncomeSummary() -> Double{
+        
+        let incomeList = transactionsList.filter{$0.isIncome}
+        
+        return incomeList.reduce(0){$0 + $1.amount} - getExpenseSummary()
     }
     
 }

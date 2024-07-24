@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct CategoryPicker: View {
-    @Binding var symbol : ExpenseSymbols
+    @Binding var symbol : TransactionSymbols
     var body: some View {
         
         Picker("Select a Category", selection: $symbol) {
             
-            ForEach(ExpenseSymbols.allCases, id: \.self) { symbol in
+            ForEach(TransactionSymbols.allCases, id: \.self) { symbol in
                 HStack {
                     Image(systemName: symbol.symbol)
                         .font(.title)

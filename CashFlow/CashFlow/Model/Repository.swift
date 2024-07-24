@@ -10,54 +10,56 @@ import Foundation
 
 class Repository{
     
+    
     static let sharedInstance = Repository()
     
     private let store = PersistentStore.shared
     
     
-    func fetchExpenses() throws ->[Expense]{
-        
-        return try store.context.fetch(Expense.fetchRequest())
+    func fetchTransactions() throws -> [TransactionEntity]{
+        return try store.context.fetch(TransactionEntity.fetchRequest())
     }
     
-    
-    func addExpense(_ title:String ,_ amount:Double,_ symbol:String) throws {
+    func addExpense(_ title:String ,_ amount:Double,_ symbol:String, _ isIncome:Bool) throws {
         
-        let newExpense = Expense(context: store.context)
+        let newTransaction = TransactionEntity(context: store.context)
         
-        newExpense.id = UUID()
-        newExpense.date = Date.now
-        newExpense.title = title
-        newExpense.amount = amount
-        newExpense.symbol = symbol
-
+        newTransaction.id = UUID()
+        newTransaction.date = Date.now
+        newTransaction.title = title
+        newTransaction.amount = amount
+        newTransaction.symbol = symbol
+        newTransaction.isIncome = isIncome
+        
         try store.context.save()
     }
     
-    
-    func editExpense (_ expense:Expense,_ title:String? = nil,_ amount:Double? = nil,_ symbol:String? = nil) throws{
+    func editExpense (_ transaction:TransactionEntity,_ title:String? = nil,_ amount:Double? = nil,_ symbol:String? = nil,_ isIncome:Bool? = nil) throws{
         
         if let title = title{
-            expense.title = title
+            transaction.title = title
         }
         
         if let amount = amount{
-            expense.amount = amount
+            transaction.amount = amount
         }
-       
+        
         if let symbol = symbol{
-            expense.symbol = symbol
+            transaction.symbol = symbol
+        }
+        
+        if let isIncome = isIncome{
+            transaction.isIncome = isIncome
         }
         
         try store.context.save()
     }
     
-    
-    func deleteExpense(_ expense:Expense) throws {
+    func deleteExpense(_ transaction:TransactionEntity) throws {
+
+        store.context.delete(transaction)
         
-        store.context.delete(expense)
-        
-        try store.context.save()
+       try store.context.save()
         
     }
     

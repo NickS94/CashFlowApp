@@ -23,16 +23,12 @@ struct AddNewBudgetSheetView: View {
                 Section("Category") {
                     CategoryPicker(symbol: $addNewTransactionViewModel.symbol)
                 }
+                Section("Transactio Type") {
+                    Toggle(!addNewTransactionViewModel.isIncome ? "Expense" : "Income", isOn: $addNewTransactionViewModel.isIncome)
+                        
+                }
             }
             .scrollContentBackground(.hidden)
-            
-            List(addNewTransactionViewModel.expensesList){ expense in
-                TransactionsRow(expense: expense)
-                    .onTapGesture {
-                        addNewTransactionViewModel.setExistedParameters(expense)
-                    }
-            }
-            .listStyle(.inset)
             .navigationTitle("Add Expense")
             .toolbarTitleDisplayMode(.inline)
             .toolbar {
@@ -46,10 +42,26 @@ struct AddNewBudgetSheetView: View {
                     }, actionAdd: {
                         addNewTransactionViewModel.addNewExpense()
                     }, showSheet: $showSheet, showAlert: $showAlert, alertText: $alertText)
-  
+                    
                 }
             }
+            VStack(alignment:.leading){
+                Text("History")
+                    .font(.title2)
+                    .bold()
+                List(addNewTransactionViewModel.transactionsList){ transaction in
+                    TransactionsRow(transaction: transaction)
+                        .onTapGesture {
+                            addNewTransactionViewModel.setExistedParameters(transaction)
+                        }
+                }
+                .listStyle(.inset)
+            }
+            .frame(maxWidth: .infinity, maxHeight: 320)
+            .padding(5)
+            
         }
+        
     }
 }
 

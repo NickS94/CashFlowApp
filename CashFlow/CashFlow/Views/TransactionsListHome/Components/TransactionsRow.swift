@@ -8,28 +8,33 @@
 import SwiftUI
 
 struct TransactionsRow: View {
-    let expense:Expense
+    let transaction:TransactionEntity
     
     var body: some View {
         HStack {
             
-            Image(systemName: ExpenseSymbols(rawValue:expense.symbol ?? "")?.symbol ?? "xmark")
+            Image(systemName: TransactionSymbols(rawValue:transaction.symbol ?? "")?.symbol ?? "xmark")
                 .font(.title2)
                 .frame(width: 40,height: 40)
-                .background(ExpenseSymbols(rawValue: expense.symbol ?? "")?.color ?? .accentColor)
+                .background(TransactionSymbols(rawValue: transaction.symbol ?? "")?.color ?? .accentColor)
                 .clipShape(Circle())
 
             VStack(alignment: .leading, spacing: 5) {
-                Text(expense.title ?? "")
+                Text(transaction.title ?? "")
                     .font(.system(size: 14))
                 
-                Text((expense.date?.dateString ?? ""))
+                Text((transaction.date?.dateString ?? ""))
                     .font(.system(size: 14))
             }
             
             Spacer()
             
-            Text("-"+(String(format:"%.2f",expense.amount))+"€")
+            Text(transaction.isIncome ? "+" + (String(format:"%.2f",transaction.amount)) + "€" : "-" + (String(format:"%.2f",transaction.amount)) + "€")
+                .font(.system(size: 20))
+                .bold()
+                .foregroundStyle(transaction.isIncome ? .green : .red)
+            
+            
         }
         .padding()
         .clipShape(RoundedRectangle(cornerRadius: 10))
