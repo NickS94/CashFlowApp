@@ -36,8 +36,8 @@
 		030BFEFC2C502A640093DBEB /* SummaryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEFB2C502A640093DBEB /* SummaryHeader.swift */; };
 		030BFEFE2C502B930093DBEB /* SaveDetailsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFEFD2C502B930093DBEB /* SaveDetailsButton.swift */; };
 		030BFF022C502C8C0093DBEB /* AddNewTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFF012C502C8C0093DBEB /* AddNewTransactionViewModel.swift */; };
-		0381183F2C50C28A0020BB3E /* DatabaseModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0381183D2C50C28A0020BB3E /* DatabaseModel.xcdatamodeld */; };
 		C638D6E42C4EFF77002C0EBF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C638D6E32C4EFF77002C0EBF /* ProfileView.swift */; };
+		FC7418682C51402900331A05 /* DatabaseModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC7418662C51402900331A05 /* DatabaseModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,8 +90,8 @@
 		030BFEFB2C502A640093DBEB /* SummaryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHeader.swift; sourceTree = "<group>"; };
 		030BFEFD2C502B930093DBEB /* SaveDetailsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDetailsButton.swift; sourceTree = "<group>"; };
 		030BFF012C502C8C0093DBEB /* AddNewTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTransactionViewModel.swift; sourceTree = "<group>"; };
-		0381183E2C50C28A0020BB3E /* DatabaseModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DatabaseModel.xcdatamodel; sourceTree = "<group>"; };
 		C638D6E32C4EFF77002C0EBF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		FC7418672C51402900331A05 /* DatabaseModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DatabaseModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,7 +296,7 @@
 		C638D6E02C4EFA7E002C0EBF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0381183D2C50C28A0020BB3E /* DatabaseModel.xcdatamodeld */,
+				FC7418662C51402900331A05 /* DatabaseModel.xcdatamodeld */,
 				030BFED52C4FA2850093DBEB /* PersistentStore.swift */,
 				030BFED72C4FA2C80093DBEB /* Repository.swift */,
 			);
@@ -434,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				030BFEFA2C5029D70093DBEB /* SheetButton.swift in Sources */,
+				FC7418682C51402900331A05 /* DatabaseModel.xcdatamodeld in Sources */,
 				030BFEE32C4FFE420093DBEB /* TransactionsDetailsViewModel.swift in Sources */,
 				030BFEEF2C50255C0093DBEB /* CategoryPicker.swift in Sources */,
 				030BFEE82C500F4B0093DBEB /* DetailsEditingForm.swift in Sources */,
@@ -445,7 +446,6 @@
 				030BFEF52C5027CD0093DBEB /* AddNewTransactionButton.swift in Sources */,
 				030BFEC62C4E8BC00093DBEB /* TransactionsView.swift in Sources */,
 				030BFEE62C500DA70093DBEB /* DetailsForm.swift in Sources */,
-				0381183F2C50C28A0020BB3E /* DatabaseModel.xcdatamodeld in Sources */,
 				030BFE992C4E5CD90093DBEB /* CashFlowApp.swift in Sources */,
 				C638D6E42C4EFF77002C0EBF /* ProfileView.swift in Sources */,
 				030BFEFE2C502B930093DBEB /* SaveDetailsButton.swift in Sources */,
@@ -790,14 +790,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0381183D2C50C28A0020BB3E /* DatabaseModel.xcdatamodeld */ = {
+		FC7418662C51402900331A05 /* DatabaseModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0381183E2C50C28A0020BB3E /* DatabaseModel.xcdatamodel */,
+				FC7418672C51402900331A05 /* DatabaseModel.xcdatamodel */,
 			);
-			currentVersion = 0381183E2C50C28A0020BB3E /* DatabaseModel.xcdatamodel */;
+			currentVersion = FC7418672C51402900331A05 /* DatabaseModel.xcdatamodel */;
 			name = DatabaseModel.xcdatamodeld;
-			path = /Users/nikosstauropoulos/iOS_Projektwoche2_Gruppe1/CashFlow/CashFlow/Model/DatabaseModel.xcdatamodeld;
+			path = /Users/viktoryiaart/iOS_Projektwoche2_Gruppe1/CashFlow/CashFlow/Model/DatabaseModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
