@@ -29,6 +29,8 @@ class TransactionsViewModel:ObservableObject{
     }
 
     
+  
+    
     func deleteTransaction(_ transaction :TransactionEntity){
         do{
             try repository.deleteExpense(transaction)
@@ -52,6 +54,7 @@ class TransactionsViewModel:ObservableObject{
         
         let incomeList = transactionsList.filter{$0.isIncome}
         let balance = incomeList.reduce(0){$0 + $1.amount} - getExpenseSummary()
+        
         return max(0,balance)
     }
     

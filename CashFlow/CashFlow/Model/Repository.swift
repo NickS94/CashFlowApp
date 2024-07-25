@@ -20,6 +20,21 @@ class Repository{
         return try store.context.fetch(TransactionEntity.fetchRequest())
     }
     
+    
+    func filterTransactionsByType(_ isIncome:Bool)throws ->[TransactionEntity]{
+        
+        let request = TransactionEntity.fetchRequest()
+        
+        request.predicate = NSPredicate(format: "isIncome == %@", NSNumber(value: isIncome))
+
+        return try store.context.fetch(request)
+    }
+    
+    
+   
+    
+    
+    
     func addExpense(_ title:String ,_ amount:Double,_ symbol:String, _ isIncome:Bool) throws {
         
         let newTransaction = TransactionEntity(context: store.context)

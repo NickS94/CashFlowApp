@@ -14,6 +14,7 @@ struct SplashScreenView: View {
     @State private var rotationAngle: Double = 0.0
     
     var body: some View {
+        
         Group {
             if isActive {
                 ContentView()
@@ -31,8 +32,6 @@ struct SplashScreenView: View {
                             .font(.title3)
                             .padding(.top, 8)
                             .fontDesign(.monospaced)
-                            
-                        
                     }
                     .scaleEffect(size)
                     .opacity(opacity)
@@ -50,7 +49,6 @@ struct SplashScreenView: View {
                 }
             }
         }
-        
     }
 }
 
