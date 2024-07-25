@@ -24,8 +24,12 @@ struct AddNewBudgetSheetView: View {
                     CategoryPicker(symbol: $addNewTransactionViewModel.symbol)
                 }
                 Section("Transaction Type") {
-                    Toggle(!addNewTransactionViewModel.isIncome ? "Expense" : "Income", isOn: $addNewTransactionViewModel.isIncome)
-                        
+                    Picker("Type", selection: $addNewTransactionViewModel.transactionType) {
+                        ForEach([TransactionTypes.incomes,TransactionTypes.expenses],id: \.rawValue){ type in
+                            Text(type.rawValue).tag(type)
+                        }
+                    }
+                    .pickerStyle(.segmented)
                 }
             }
             .scrollContentBackground(.hidden)

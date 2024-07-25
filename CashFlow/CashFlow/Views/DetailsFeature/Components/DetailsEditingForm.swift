@@ -67,8 +67,13 @@ struct DetailsEditingForm: View {
             }
             
             Section("Type") {
-                Toggle(detailsViewModel.isIncome ? "Income" : "Expense", isOn: $detailsViewModel.isIncome)
+                Picker("Transaction Type", selection:$detailsViewModel.transactionType) {
+                    ForEach([TransactionTypes.incomes,TransactionTypes.expenses], id: \.rawValue){ type in
+                        Text(type.rawValue).tag(type)
+                    }
+                }
             }
+            .pickerStyle(.segmented)
         }
         .scrollContentBackground(.hidden)
     }

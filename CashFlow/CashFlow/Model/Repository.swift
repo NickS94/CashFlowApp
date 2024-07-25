@@ -21,21 +21,18 @@ class Repository{
     }
     
     
-    func filterTransactionsByType(_ isIncome:Bool)throws ->[TransactionEntity]{
+    func transactionTypeFilter(_ transactionType:String)throws ->[TransactionEntity]{
         
         let request = TransactionEntity.fetchRequest()
         
-        request.predicate = NSPredicate(format: "isIncome == %@", NSNumber(value: isIncome))
+        request.predicate = NSPredicate(format: "transactionType == %@" ,transactionType)
 
         return try store.context.fetch(request)
     }
     
+
     
-   
-    
-    
-    
-    func addExpense(_ title:String ,_ amount:Double,_ symbol:String, _ isIncome:Bool) throws {
+    func addExpense(_ title:String ,_ amount:Double,_ symbol:String, _ transactionType:String) throws {
         
         let newTransaction = TransactionEntity(context: store.context)
         
@@ -44,12 +41,12 @@ class Repository{
         newTransaction.title = title
         newTransaction.amount = amount
         newTransaction.symbol = symbol
-        newTransaction.isIncome = isIncome
+        newTransaction.transactionType = transactionType
         
         try store.context.save()
     }
     
-    func editExpense (_ transaction:TransactionEntity,_ title:String? = nil,_ amount:Double? = nil,_ symbol:String? = nil,_ isIncome:Bool? = nil) throws{
+    func editExpense (_ transaction:TransactionEntity,_ title:String? = nil,_ amount:Double? = nil,_ symbol:String? = nil,_ transactionType:String? = nil) throws{
         
         if let title = title{
             transaction.title = title
@@ -63,8 +60,8 @@ class Repository{
             transaction.symbol = symbol
         }
         
-        if let isIncome = isIncome{
-            transaction.isIncome = isIncome
+        if let transactionType = transactionType{
+            transaction.transactionType = transactionType
         }
         
         try store.context.save()

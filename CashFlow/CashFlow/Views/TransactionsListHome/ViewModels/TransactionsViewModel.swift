@@ -15,12 +15,15 @@ class TransactionsViewModel:ObservableObject{
     @Published var showSheet = false
     @Published var showAlert = false
     @Published var alertText = ""
+    @Published var transactionType:TransactionTypes = .all
+    @Published var remainingSalary = 0.0
+    @Published var expenses = 0.0
     
     
     private let repository = Repository.sharedInstance
   
     
-    func getData(){
+   private func getAllTransactions(){
         do{
             transactionsList = try repository.fetchTransactions()
         }catch{
@@ -28,34 +31,46 @@ class TransactionsViewModel:ObservableObject{
         }
     }
 
-    
+    func transactionTypeFilter(){
+        
+        guard transactionType != .all else{
+            getAllTransactions()
+            return
+        }
+        
+        do{
+            transactionsList = try repository.transactionTypeFilter(transactionType.rawValue)
+        }catch{
+            print(error.localizedDescription)
+        }
+    }
   
-    
     func deleteTransaction(_ transaction :TransactionEntity){
         do{
             try repository.deleteExpense(transaction)
-            getData()
+            getAllTransactions()
         }catch{
             print(error.localizedDescription)
         }
     }
     
+
+    func getIncomeSummary(){
     
-   
-    func getExpenseSummary() -> Double{
-        
-        let expenseList = transactionsList.filter{!$0.isIncome}
-        
-        return expenseList.reduce(0){$0 + $1.amount}
-        
-    }
-    
-    func getIncomeSummary() -> Double{
-        
-        let incomeList = transactionsList.filter{$0.isIncome}
-        let balance = incomeList.reduce(0){$0 + $1.amount} - getExpenseSummary()
-        
-        return max(0,balance)
+        do{
+            let allIncome = try repository.transactionTypeFilter("Incomes")
+            
+            let allExpenses = try repository.transactionTypeFilter("Expenses")
+            
+            expenses = allExpenses.reduce(0){$0 + $1.amount}
+            
+            remainingSalary = allIncome.reduce(0){$0 + $1.amount} - allExpenses.reduce(0){$0 + $1.amount}
+            
+        }catch{
+            print(error.localizedDescription)
+            
+        }
+
     }
     
 }

@@ -15,7 +15,7 @@ class TransactionsDetailsViewModel:ObservableObject{
     @Published var title:String
     @Published var amount:String
     @Published var symbol:TransactionSymbols
-    @Published var isIncome:Bool
+    @Published var transactionType:TransactionTypes
     @Published var counter = 0
     
     
@@ -28,7 +28,12 @@ class TransactionsDetailsViewModel:ObservableObject{
         self.transaction = transaction
         self.title = transaction.title ?? ""
         self.amount = String(transaction.amount)
-        self.isIncome = transaction.isIncome
+        
+        if let transactionType = TransactionTypes(rawValue: transaction.transactionType ?? "") {
+            self.transactionType = transactionType
+        } else {
+            self.transactionType = .all
+        }
         
         if let transactionSymbol = TransactionSymbols(rawValue: transaction.symbol ?? "") {
             self.symbol = transactionSymbol
@@ -40,7 +45,7 @@ class TransactionsDetailsViewModel:ObservableObject{
     
     func updateExpense(){
         do{
-            try repository.editExpense(transaction,title,Double(amount) ?? 0,symbol.rawValue ,isIncome)
+            try repository.editExpense(transaction,title,Double(amount) ?? 0,symbol.rawValue ,transactionType.rawValue)
             counter = 0
             isEditing = false
         }catch{

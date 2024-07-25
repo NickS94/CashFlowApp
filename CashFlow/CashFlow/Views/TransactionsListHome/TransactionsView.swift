@@ -16,12 +16,16 @@ struct TransactionsView: View {
         NavigationStack {
             
             VStack(alignment: .leading) {
-                SummaryHeader {
-                    viewModel.getExpenseSummary()
-                } actionIncomeSummary: {
-                    viewModel.getIncomeSummary()
+                SummaryHeader(viewModel: viewModel)
+                
+                Picker("Filter", selection: $viewModel.transactionType) {
+                    ForEach(TransactionTypes.allCases, id:\.rawValue) { type in
+                        Text(type.rawValue).tag(type)
+                    }
                 }
-
+                .pickerStyle(.segmented)
+                
+                
                 List(viewModel.transactionsList){ transaction in
                     NavigationLink {
                         TransactionDetailView(detailsViewModel: TransactionsDetailsViewModel(transaction:transaction))
@@ -40,16 +44,26 @@ struct TransactionsView: View {
                 ToolbarItem{
                     SheetButton(showSheet: $viewModel.showSheet)
                 }
+                
             }
             .navigationTitle("Transactions")
             .onAppear{
-                viewModel.getData()
+                
+                viewModel.getIncomeSummary()
+                viewModel.transactionTypeFilter()
+                
             }
+            .onChange(of: viewModel.transactionType) {
+                
+                viewModel.transactionTypeFilter()
+                
+            }
+            
             .sheet(isPresented: $viewModel.showSheet) {
                 AddNewBudgetSheetView(addNewTransactionViewModel: AddNewTransactionViewModel(transactionsList: viewModel.transactionsList, updateAction: {
-                    viewModel.getData()
+                    viewModel.transactionTypeFilter()
                 }), showSheet: $viewModel.showSheet, showAlert: $viewModel.showAlert, alertText: $viewModel.alertText)
-                    .alert(viewModel.alertText, isPresented: $viewModel.showAlert){}
+                .alert(viewModel.alertText, isPresented: $viewModel.showAlert){}
             }
         }
     }

@@ -9,29 +9,25 @@ import SwiftUI
 
 struct SummaryHeader: View {
     
-    var actionExpenseSummary:()->Double
-    var actionIncomeSummary:()->Double
+    @ObservedObject var viewModel:TransactionsViewModel
     
     var body: some View {
         
         HStack {
             Text("Remaining Salary:")
             Spacer()
-            Text("\(String(format : "%.2f" , actionIncomeSummary()))€")
+            Text("\(String(format : "%.2f" , viewModel.remainingSalary))€")
                 .foregroundStyle(.green)
             
         }
         .padding()
         HStack {
-            Text("Costs Summary:")
+            Text("Costs:")
             Spacer()
-            Text("\(String(format : "%.2f" , actionExpenseSummary()))€")
+            Text("\(String(format : "%.2f" , viewModel.expenses))€")
                 .foregroundStyle(.red)
         }
         .padding()
     }
 }
 
-#Preview {
-    SummaryHeader(actionExpenseSummary: {0.0}, actionIncomeSummary: {0.0})
-}

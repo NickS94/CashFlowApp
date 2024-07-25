@@ -27,8 +27,7 @@ struct DetailsForm: View {
             Section("Description") {
                 Text((transaction.title ?? ""))
                     .font(.title)
-                    
-                
+
             }
             
             Section("Amount") {
@@ -36,15 +35,13 @@ struct DetailsForm: View {
                 Text(String(format : "%.2f" ,transaction.amount) + "€")
                     .font(.title)
                     .bold()
-                    
-                 
             }
             
             Section("Type") {
-                Text(transaction.isIncome ? "Income" : "Expense")
+                Text(transaction.transactionType == "Incomes" ? "Income" : "Expense")
                     .font(.title)
                     .bold()
-                    .foregroundStyle(transaction.isIncome ? .green : .red)
+                    .foregroundStyle(transaction.transactionType == "Incomes" ? .green : .red)
             }
         }
         .scrollContentBackground(.hidden)

@@ -14,7 +14,7 @@ class AddNewTransactionViewModel:ObservableObject{
     @Published var title = ""
     @Published var amount = ""
     @Published var symbol = TransactionSymbols.clothing
-    @Published var isIncome = false
+    @Published var transactionType:TransactionTypes = .incomes
     
     @Published var transactionsList:[TransactionEntity]
     var updateAction:()-> Void
@@ -31,7 +31,7 @@ class AddNewTransactionViewModel:ObservableObject{
     
     func addNewExpense() {
         do{
-            try repository.addExpense(title, Double(amount) ?? 0.0, symbol.rawValue, isIncome)
+            try repository.addExpense(title, Double(amount) ?? 0.0, symbol.rawValue, transactionType.rawValue)
             updateAction()
         }catch{
             print(error.localizedDescription)
@@ -57,7 +57,11 @@ class AddNewTransactionViewModel:ObservableObject{
             symbol = .groceries
         }
         
-        isIncome = transaction.isIncome
+        if let transactionType = TransactionTypes(rawValue: transaction.transactionType ?? "") {
+            self.transactionType = transactionType
+        }else{
+            self.transactionType = .incomes
+        }
         
     }
     

@@ -29,10 +29,10 @@ struct TransactionsRow: View {
             
             Spacer()
             
-            Text(transaction.isIncome ? "+" + (String(format:"%.2f",transaction.amount)) + "€" : "-" + (String(format:"%.2f",transaction.amount)) + "€")
+            Text(transaction.transactionType == "Incomes" ? "+" + (String(format:"%.2f",transaction.amount)) + "€" : "-" + (String(format:"%.2f",transaction.amount)) + "€")
                 .font(.system(size: 20))
                 .bold()
-                .foregroundStyle(transaction.isIncome ? .green : .red)
+                .foregroundStyle(transaction.transactionType == "Incomes" ? .green : .red)
             
             
         }
