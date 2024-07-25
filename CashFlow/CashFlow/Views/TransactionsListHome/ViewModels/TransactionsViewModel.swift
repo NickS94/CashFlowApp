@@ -51,8 +51,8 @@ class TransactionsViewModel:ObservableObject{
     func getIncomeSummary() -> Double{
         
         let incomeList = transactionsList.filter{$0.isIncome}
-        
-        return incomeList.reduce(0){$0 + $1.amount} - getExpenseSummary()
+        let balance = incomeList.reduce(0){$0 + $1.amount} - getExpenseSummary()
+        return max(0,balance)
     }
     
 }

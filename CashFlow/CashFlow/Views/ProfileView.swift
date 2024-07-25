@@ -57,7 +57,7 @@ struct ProfileView: View {
                     }
                 }
             }
-            .navigationTitle("Profile")
+            .navigationTitle("Analytics")
         }
     }
 }

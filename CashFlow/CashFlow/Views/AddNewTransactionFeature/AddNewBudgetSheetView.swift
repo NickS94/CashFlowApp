@@ -23,7 +23,7 @@ struct AddNewBudgetSheetView: View {
                 Section("Category") {
                     CategoryPicker(symbol: $addNewTransactionViewModel.symbol)
                 }
-                Section("Transactio Type") {
+                Section("Transaction Type") {
                     Toggle(!addNewTransactionViewModel.isIncome ? "Expense" : "Income", isOn: $addNewTransactionViewModel.isIncome)
                         
                 }

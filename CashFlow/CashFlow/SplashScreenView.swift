@@ -38,6 +38,9 @@ struct SplashScreenView: View {
                     .opacity(opacity)
                     .rotationEffect(.degrees(rotationAngle))
                     .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                            self.isActive = true
+                        }
                         withAnimation(.easeIn(duration: 1.5)) {
                             self.size = 0.9
                             self.opacity = 1.0
@@ -47,11 +50,7 @@ struct SplashScreenView: View {
                 }
             }
         }
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-                self.isActive = true
-            }
-        }
+        
     }
 }
 

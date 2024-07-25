@@ -22,8 +22,8 @@ struct ContentView: View {
             ProfileView()
                 .tabItem {
                     VStack{
-                        Image(systemName: "gear")
-                        Text("Settings")
+                        Image(systemName: "")
+                        Text("Statistics")
                     }
                 }
         }
