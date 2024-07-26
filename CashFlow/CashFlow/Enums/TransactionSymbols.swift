@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Charts
 
 
 enum TransactionSymbols:String,CaseIterable{
@@ -79,71 +80,48 @@ enum TransactionSymbols:String,CaseIterable{
     }
     
     var color: Color {
-        
         switch self {
-            
         case .groceries:
-                .mintGreen
+            return .green
         case .rent:
-                .peach
+            return .orange
         case .heatingCosts:
-                .burntSienna
+            return .red
         case .electricity:
-                .gold
+            return .yellow
         case .insurance:
-                .lavender
+            return .purple
         case .gym:
-                .seaGreen
+            return .blue
         case .autoFuel:
-                .slateGray
+            return .gray
         case .phone:
-                .jade
+            return .cyan
         case .internet:
-                .azure
+            return .teal
         case .diningOut:
-                .mahogany
+            return .pink
         case .entertainment:
-                .cerulean
+            return .indigo
         case .travel:
-                .turquoise
+            return .mint
         case .healthcare:
-                .emerald
+            return .green
         case .education:
-                .saffron
+            return .orange
         case .clothing:
-                .amethyst
+            return .purple
         case .pets:
-                .umber
+            return .brown
         case .subscriptions:
-                .crimson
+            return .red
         case .transportation:
-                .amber
+            return .yellow
         case .savings:
-                .forestGreen
+            return .green
         case .income:
-                .yellow
+            return .yellow
         }
     }
 }
 
-extension Color {
-    static let mintGreen = Color(red: 152/255, green: 255/255, blue: 152/255)
-    static let peach = Color(red: 255/255, green: 218/255, blue: 185/255)
-    static let burntSienna = Color(red: 233/255, green: 116/255, blue: 81/255)
-    static let gold = Color(red: 255/215, green: 215/255, blue: 0/255)
-    static let lavender = Color(red: 230/255, green: 230/255, blue: 250/255)
-    static let seaGreen = Color(red: 46/255, green: 139/255, blue: 87/255)
-    static let slateGray = Color(red: 112/255, green: 128/255, blue: 144/255)
-    static let jade = Color(red: 0/255, green: 168/255, blue: 107/255)
-    static let azure = Color(red: 240/255, green: 255/255, blue: 255/255)
-    static let mahogany = Color(red: 192/255, green: 64/255, blue: 0/255)
-    static let cerulean = Color(red: 0/255, green: 123/255, blue: 167/255)
-    static let turquoise = Color(red: 64/255, green: 224/255, blue: 208/255)
-    static let emerald = Color(red: 80/255, green: 200/255, blue: 120/255)
-    static let saffron = Color(red: 244/255, green: 196/255, blue: 48/255)
-    static let amethyst = Color(red: 153/255, green: 102/255, blue: 204/255)
-    static let umber = Color(red: 99/255, green: 81/255, blue: 71/255)
-    static let crimson = Color(red: 220/255, green: 20/255, blue: 60/255)
-    static let amber = Color(red: 255/255, green: 191/255, blue: 0/255)
-    static let forestGreen = Color(red: 34/255, green: 139/255, blue: 34/255)
-}

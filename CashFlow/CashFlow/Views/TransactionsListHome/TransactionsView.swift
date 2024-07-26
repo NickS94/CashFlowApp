@@ -18,6 +18,13 @@ struct TransactionsView: View {
             VStack(alignment: .leading) {
                 SummaryHeader(viewModel: viewModel)
                 
+                if viewModel.expensesPercentage > 70{
+                    Text("You have spent " + String(format: "%.2f" ,viewModel.expensesPercentage) + "% of your income! Be careful!")
+                        .font(.system(size: 14).bold())
+                        .foregroundStyle(.red)
+                        .padding()
+                }
+                
                 Picker("Filter", selection: $viewModel.transactionType) {
                     ForEach(TransactionTypes.allCases, id:\.rawValue) { type in
                         Text(type.rawValue).tag(type)

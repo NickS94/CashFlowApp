@@ -20,6 +20,7 @@ struct CategoryPicker: View {
                         .frame(width: 60,height: 60)
                         .background(symbol.color)
                         .clipShape(Circle())
+                        .shadow(radius: 10)
                     Text(symbol.rawValue)
                     
                 }

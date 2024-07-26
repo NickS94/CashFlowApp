@@ -19,9 +19,7 @@ struct ContentView: View {
                     }
                 }
             
-            AnalyticsView(viewModel: AnalyticsViewModel(transactionsList: transactionsViewModel.transactionsList, expenses: transactionsViewModel.expenses, incomes: transactionsViewModel.incomes, updateAction: {
-                transactionsViewModel.transactionTypeFilter()
-            }))
+            AnalyticsView(viewModel: transactionsViewModel)
                 .tabItem {
                     VStack{
                         Image(systemName: "chart.pie.fill")

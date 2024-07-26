@@ -17,15 +17,10 @@ struct SummaryHeader: View {
             Text("Remaining Salary:")
             Spacer()
             Text("\(String(format : "%.2f" , viewModel.remainingSalary))€")
-                .foregroundStyle(.green)
+                .font(.system(size: 20).bold())
+                .foregroundStyle(viewModel.remainingSalary > 0 ? .green : .red)
             
-        }
-        .padding()
-        HStack {
-            Text("Costs:")
-            Spacer()
-            Text("\(String(format : "%.2f" , viewModel.expenses))€")
-                .foregroundStyle(.red)
+            
         }
         .padding()
     }

@@ -11,28 +11,32 @@ import Charts
 
 struct AnalyticsView: View {
     
-    @ObservedObject var viewModel : AnalyticsViewModel
+    @ObservedObject var viewModel : TransactionsViewModel
     
     var body: some View {
         NavigationStack{
             VStack{
                 AnalyticsTable(viewModel: viewModel)
-                Chart {
-                    ForEach(viewModel.transactionsList){ item in
-                        SectorMark(angle: .value("Amounts", item.amount),innerRadius: 60, angularInset: 1)
-                            .foregroundStyle(by: .value(item.title ?? "", item.symbol ?? ""))
-                            .cornerRadius(10)
-                    }
+                
+                
+                Chart(viewModel.transactionsList){ item in
+                    BarMark(x:.value("Amounts",item.amount) ,y: .value("Categories", item.symbol ?? ""), width: 10, height: 100)
+                        .foregroundStyle(TransactionSymbols(rawValue: item.symbol ?? "")?.color ?? .blue)
+                    
                 }
-                .padding()
+                
+                
             }
+            .padding()
             .navigationTitle("Analytics")
         }
         .onAppear{
-            viewModel.updateAction()
-            
+            viewModel.transactionTypeFilter()
         }
     }
 }
 
 
+#Preview {
+    AnalyticsView(viewModel: TransactionsViewModel())
+}

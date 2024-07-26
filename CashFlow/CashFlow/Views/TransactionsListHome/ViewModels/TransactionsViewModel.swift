@@ -19,19 +19,21 @@ class TransactionsViewModel:ObservableObject{
     @Published var remainingSalary = 0.0
     @Published var expenses = 0.0
     @Published var incomes = 0.0
+    @Published var expensesPercentage = 0.0
     
     private let repository = Repository.sharedInstance
-  
-  
-   func getAllTransactions(){
+    
+    
+    private func getAllTransactions(){
         do{
             transactionsList = try repository.fetchTransactions()
             getIncomeSummary()
+            getExpenseResultInPercent()
         }catch{
             print(error.localizedDescription)
         }
     }
-
+    
     func transactionTypeFilter(){
         
         guard transactionType != .all else{
@@ -42,11 +44,12 @@ class TransactionsViewModel:ObservableObject{
         do{
             transactionsList = try repository.transactionTypeFilter(transactionType.rawValue)
             getIncomeSummary()
+            getExpenseResultInPercent()
         }catch{
             print(error.localizedDescription)
         }
     }
-  
+    
     func deleteTransaction(_ transaction :TransactionEntity){
         do{
             try repository.deleteExpense(transaction)
@@ -56,9 +59,9 @@ class TransactionsViewModel:ObservableObject{
         }
     }
     
-
-    func getIncomeSummary(){
     
+    private func getIncomeSummary(){
+        
         do{
             let allIncome = try repository.transactionTypeFilter("Incomes")
             
@@ -74,7 +77,11 @@ class TransactionsViewModel:ObservableObject{
             print(error.localizedDescription)
             
         }
-
+        
+    }
+    
+    private func getExpenseResultInPercent(){
+        expensesPercentage = (expenses / incomes) * 100
     }
     
 }
