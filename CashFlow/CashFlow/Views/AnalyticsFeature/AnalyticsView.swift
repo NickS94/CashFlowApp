@@ -22,7 +22,7 @@ struct AnalyticsView: View {
                 Chart(viewModel.transactionsList){ item in
                     BarMark(x:.value("Amounts",item.amount) ,y: .value("Categories", item.symbol ?? ""), width: 10, height: 100)
                         .foregroundStyle(TransactionSymbols(rawValue: item.symbol ?? "")?.color ?? .blue)
-                    
+                        .cornerRadius(12)
                 }
                 
                 
