@@ -23,9 +23,10 @@ class TransactionsViewModel:ObservableObject{
     private let repository = Repository.sharedInstance
   
     
-   private func getAllTransactions(){
+   func getAllTransactions(){
         do{
             transactionsList = try repository.fetchTransactions()
+            getIncomeSummary()
         }catch{
             print(error.localizedDescription)
         }
@@ -40,6 +41,7 @@ class TransactionsViewModel:ObservableObject{
         
         do{
             transactionsList = try repository.transactionTypeFilter(transactionType.rawValue)
+            getIncomeSummary()
         }catch{
             print(error.localizedDescription)
         }

@@ -49,7 +49,6 @@ struct TransactionsView: View {
             .navigationTitle("Transactions")
             .onAppear{
                 
-                viewModel.getIncomeSummary()
                 viewModel.transactionTypeFilter()
                 
             }
