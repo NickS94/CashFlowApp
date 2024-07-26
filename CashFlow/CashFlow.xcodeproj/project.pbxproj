@@ -38,7 +38,9 @@
 		030BFF022C502C8C0093DBEB /* AddNewTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BFF012C502C8C0093DBEB /* AddNewTransactionViewModel.swift */; };
 		038118452C525A1B0020BB3E /* DatabaseModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 038118432C525A1B0020BB3E /* DatabaseModel.xcdatamodeld */; };
 		038118472C5270E60020BB3E /* TransactionTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038118462C5270E60020BB3E /* TransactionTypes.swift */; };
-		C638D6E42C4EFF77002C0EBF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C638D6E32C4EFF77002C0EBF /* ProfileView.swift */; };
+		0381184E2C539F9B0020BB3E /* AnalyticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0381184D2C539F9B0020BB3E /* AnalyticsViewModel.swift */; };
+		038118512C53A2560020BB3E /* AnalyticsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038118502C53A2560020BB3E /* AnalyticsTable.swift */; };
+		C638D6E42C4EFF77002C0EBF /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C638D6E32C4EFF77002C0EBF /* AnalyticsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,7 +95,9 @@
 		030BFF012C502C8C0093DBEB /* AddNewTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTransactionViewModel.swift; sourceTree = "<group>"; };
 		038118442C525A1B0020BB3E /* DatabaseModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DatabaseModel.xcdatamodel; sourceTree = "<group>"; };
 		038118462C5270E60020BB3E /* TransactionTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTypes.swift; sourceTree = "<group>"; };
-		C638D6E32C4EFF77002C0EBF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		0381184D2C539F9B0020BB3E /* AnalyticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewModel.swift; sourceTree = "<group>"; };
+		038118502C53A2560020BB3E /* AnalyticsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTable.swift; sourceTree = "<group>"; };
+		C638D6E32C4EFF77002C0EBF /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,10 +189,10 @@
 		030BFEC22C4E84520093DBEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0381184B2C539F450020BB3E /* AnalyticsFeature */,
 				030BFEC72C4E8F780093DBEB /* TransactionsListHome */,
 				030BFEE42C500D850093DBEB /* DetailsFeature */,
 				030BFEE92C5023B80093DBEB /* AddNewTransactionFeature */,
-				C638D6E32C4EFF77002C0EBF /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -294,6 +298,32 @@
 				030BFEDA2C4FAD770093DBEB /* TransactionsViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0381184B2C539F450020BB3E /* AnalyticsFeature */ = {
+			isa = PBXGroup;
+			children = (
+				0381184F2C53A23B0020BB3E /* Components */,
+				0381184C2C539F610020BB3E /* ViewModels */,
+				C638D6E32C4EFF77002C0EBF /* AnalyticsView.swift */,
+			);
+			path = AnalyticsFeature;
+			sourceTree = "<group>";
+		};
+		0381184C2C539F610020BB3E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0381184D2C539F9B0020BB3E /* AnalyticsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0381184F2C53A23B0020BB3E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				038118502C53A2560020BB3E /* AnalyticsTable.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		C638D6E02C4EFA7E002C0EBF /* Model */ = {
@@ -439,7 +469,9 @@
 				030BFEFA2C5029D70093DBEB /* SheetButton.swift in Sources */,
 				038118452C525A1B0020BB3E /* DatabaseModel.xcdatamodeld in Sources */,
 				030BFEE32C4FFE420093DBEB /* TransactionsDetailsViewModel.swift in Sources */,
+				0381184E2C539F9B0020BB3E /* AnalyticsViewModel.swift in Sources */,
 				030BFEEF2C50255C0093DBEB /* CategoryPicker.swift in Sources */,
+				038118512C53A2560020BB3E /* AnalyticsTable.swift in Sources */,
 				030BFEE82C500F4B0093DBEB /* DetailsEditingForm.swift in Sources */,
 				030BFEDE2C4FAECF0093DBEB /* TransactionSymbols.swift in Sources */,
 				030BFECD2C4E982D0093DBEB /* AddNewBudgetSheetView.swift in Sources */,
@@ -451,7 +483,7 @@
 				038118472C5270E60020BB3E /* TransactionTypes.swift in Sources */,
 				030BFEE62C500DA70093DBEB /* DetailsForm.swift in Sources */,
 				030BFE992C4E5CD90093DBEB /* CashFlowApp.swift in Sources */,
-				C638D6E42C4EFF77002C0EBF /* ProfileView.swift in Sources */,
+				C638D6E42C4EFF77002C0EBF /* AnalyticsView.swift in Sources */,
 				030BFEFE2C502B930093DBEB /* SaveDetailsButton.swift in Sources */,
 				030BFEE12C4FE15A0093DBEB /* DateFormatterHelper.swift in Sources */,
 				030BFEDB2C4FAD770093DBEB /* TransactionsViewModel.swift in Sources */,

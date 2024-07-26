@@ -68,7 +68,7 @@ struct DetailsEditingForm: View {
             
             Section("Type") {
                 Picker("Transaction Type", selection:$detailsViewModel.transactionType) {
-                    ForEach([TransactionTypes.incomes,TransactionTypes.expenses], id: \.rawValue){ type in
+                    ForEach([TransactionTypes.expenses,TransactionTypes.incomes], id: \.rawValue){ type in
                         Text(type.rawValue).tag(type)
                     }
                 }

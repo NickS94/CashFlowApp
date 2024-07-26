@@ -14,7 +14,7 @@ class AddNewTransactionViewModel:ObservableObject{
     @Published var title = ""
     @Published var amount = ""
     @Published var symbol = TransactionSymbols.clothing
-    @Published var transactionType:TransactionTypes = .incomes
+    @Published var transactionType:TransactionTypes = .expenses
     
     @Published var transactionsList:[TransactionEntity]
     var updateAction:()-> Void
@@ -43,8 +43,7 @@ class AddNewTransactionViewModel:ObservableObject{
         return title.isEmpty && amount.isEmpty
     }
     
-  
-    
+
     func setExistedParameters(_ transaction:TransactionEntity){
         
         title = transaction.title ?? ""

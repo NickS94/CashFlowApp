@@ -25,7 +25,7 @@ struct AddNewBudgetSheetView: View {
                 }
                 Section("Transaction Type") {
                     Picker("Type", selection: $addNewTransactionViewModel.transactionType) {
-                        ForEach([TransactionTypes.incomes,TransactionTypes.expenses],id: \.rawValue){ type in
+                        ForEach([TransactionTypes.expenses,TransactionTypes.incomes],id: \.rawValue){ type in
                             Text(type.rawValue).tag(type)
                         }
                     }
@@ -49,19 +49,22 @@ struct AddNewBudgetSheetView: View {
                     
                 }
             }
+           
             VStack(alignment:.leading){
                 Text("History")
                     .font(.title2)
                     .bold()
-                List(addNewTransactionViewModel.transactionsList){ transaction in
-                    TransactionsRow(transaction: transaction)
-                        .onTapGesture {
-                            addNewTransactionViewModel.setExistedParameters(transaction)
-                        }
+                ScrollView{
+                    ForEach(addNewTransactionViewModel.transactionsList){ transaction in
+                        TransactionsRow(transaction: transaction)
+                            .onTapGesture {
+                                addNewTransactionViewModel.setExistedParameters(transaction)
+                            }
+                    }
                 }
-                .listStyle(.inset)
+                
             }
-            .frame(maxWidth: .infinity, maxHeight: 320)
+            .frame(maxWidth: .infinity, maxHeight: 300)
             .padding(5)
             
         }

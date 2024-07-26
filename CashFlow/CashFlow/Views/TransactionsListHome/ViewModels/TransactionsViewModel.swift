@@ -18,11 +18,11 @@ class TransactionsViewModel:ObservableObject{
     @Published var transactionType:TransactionTypes = .all
     @Published var remainingSalary = 0.0
     @Published var expenses = 0.0
-    
+    @Published var incomes = 0.0
     
     private let repository = Repository.sharedInstance
   
-    
+  
    func getAllTransactions(){
         do{
             transactionsList = try repository.fetchTransactions()
@@ -63,6 +63,8 @@ class TransactionsViewModel:ObservableObject{
             let allIncome = try repository.transactionTypeFilter("Incomes")
             
             let allExpenses = try repository.transactionTypeFilter("Expenses")
+            
+            incomes = allIncome.reduce(0){$0 + $1.amount}
             
             expenses = allExpenses.reduce(0){$0 + $1.amount}
             

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TransactionsView: View {
     
-    @StateObject var viewModel = TransactionsViewModel ()
+    @ObservedObject var viewModel :TransactionsViewModel
     
     var body: some View {
         
@@ -68,7 +68,3 @@ struct TransactionsView: View {
     }
 }
 
-
-#Preview {
-    TransactionsView()
-}

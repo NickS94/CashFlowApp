@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @StateObject var transactionsViewModel = TransactionsViewModel()
     var body: some View {
         TabView {
-            TransactionsView()
+            TransactionsView(viewModel: transactionsViewModel)
                 .tabItem {
                     VStack{
                         Image(systemName: "arrow.up.arrow.down")
@@ -19,10 +19,12 @@ struct ContentView: View {
                     }
                 }
             
-            ProfileView()
+            AnalyticsView(viewModel: AnalyticsViewModel(transactionsList: transactionsViewModel.transactionsList, expenses: transactionsViewModel.expenses, incomes: transactionsViewModel.incomes, updateAction: {
+                transactionsViewModel.transactionTypeFilter()
+            }))
                 .tabItem {
                     VStack{
-                        Image(systemName: "")
+                        Image(systemName: "chart.pie.fill")
                         Text("Statistics")
                     }
                 }
